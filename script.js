@@ -25,15 +25,26 @@ let rispostCorrette = [];
 //---------------------------------
 
 btn.addEventListener('click',function() {
+  reset()
   play()
 })
 
 //--------------functions---------
 
 function play() {
-  console.log(generaNumUnico());
+  numeriEstratti = generaNumUnico()
+  console.log(numeriEstratti);
+  //2.
+  for (let i = 0; i < numeriEstratti.length; i++) {
+    const numEstratto = numeriEstratti[i];
+    output.innerHTML += ' ' + numEstratto
+  }
+
+  //3.
+  setTimeout(reset,5000)
 }
 
+//1.
 function generaNumUnico() {
   let numeriEstratti = [];
   while (numeriEstratti.length < numeriDaEstrarre) {
@@ -47,4 +58,8 @@ function generaNumUnico() {
 
 function generatoreNumRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function reset() {
+  output.innerHTML = ''
 }
