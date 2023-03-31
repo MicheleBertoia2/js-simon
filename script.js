@@ -12,4 +12,39 @@
 6.stampo i risultati diversi
 */
 
+//-------elements--------
+const btn              = document.querySelector('.btn');
+const output           = document.querySelector('.output');
+const numeriDaEstrarre = 5;
+const rangeMax         = 10
+//---------data-------------------
+let numeriEstratti = [];
+let risposteDate = [];
+let rispostCorrette = [];
 
+//---------------------------------
+
+btn.addEventListener('click',function() {
+  play()
+})
+
+//--------------functions---------
+
+function play() {
+  console.log(generaNumUnico());
+}
+
+function generaNumUnico() {
+  let numeriEstratti = [];
+  while (numeriEstratti.length < numeriDaEstrarre) {
+    let num = generatoreNumRandom(1,rangeMax)
+    if (!numeriEstratti.includes(num)) {
+      numeriEstratti.push(num)
+    }
+  }
+  return numeriEstratti
+}
+
+function generatoreNumRandom(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
