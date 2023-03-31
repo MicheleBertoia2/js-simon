@@ -41,7 +41,12 @@ function play() {
   }
 
   //3.
-  setTimeout(reset,5000)
+  setTimeout(reset,5000);
+  //4.
+  setTimeout(answer,5100)
+
+ 
+
 }
 
 //1.
@@ -62,4 +67,19 @@ function generatoreNumRandom(min, max) {
 
 function reset() {
   output.innerHTML = ''
+}
+
+function answer () {
+   //4.
+   while (risposteDate.length < numeriDaEstrarre) {
+    const risposta = parseInt(prompt('inserisci un numero alla volta'))
+    risposteDate.push(risposta)
+    console.log(risposteDate);
+  }
+
+
+}
+
+function controlloRisposte () {
+
 }
